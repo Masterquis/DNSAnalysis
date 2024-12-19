@@ -1,4 +1,4 @@
-<h1>DNS and Network Performance Fix</h1>
+<h1>DNS and Network Performance Analysis and Fix</h1>
 
 <!-- ### [YouTube Demonstration](https://youtu.be/7eJexJVCqJo) -->
 
