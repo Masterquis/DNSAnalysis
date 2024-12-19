@@ -30,41 +30,41 @@ DNS resolution delays and network performance issues.
 
 <h2>Troubleshooting Steps</h2>
 
-- <b>Action:</b> Used nslookup and ping to verify the Windows 10 Machine could not resolve the Server name through DNS <br/>
-- <b>Finding:</b> The Windows 10 Machine cannot find the Windows 2019 Server by its Hostname. Also shows a DNS server that is NOT pointing to the internal IP Address for the Server <br/>
+- <b>ACTION:</b> Used nslookup and ping to verify the Windows 10 Machine could not resolve the Server name through DNS <br/>
+- <b>FINDING:</b> The Windows 10 Machine cannot find the Windows 2019 Server by its Hostname. Also shows a DNS server that is NOT pointing to the internal IP Address for the Server <br/>
 <img src="https://i.imgur.com/IvR9mcN.png" height="80%" width="80%" alt="VM and Server 2016 Steps"/>
 <img src="https://i.imgur.com/OMmXO6f.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-- <b>Action:</b> Used ipconfig /all to check the IP Address and DNS Settings of the Windows Server <br/>
-- <b>Finding:</b> The DNS Settings of the INTERNAL NIC are pointing to an EXTERNAL DNS Server (8.8.8.8) instead of the Server's own Address<br/>
+- <b>ACTION:</b> Used ipconfig /all to check the IP Address and DNS Settings of the Windows Server <br/>
+- <b>FINDING:</b> The DNS Settings of the INTERNAL NIC are pointing to an EXTERNAL DNS Server (8.8.8.8) instead of the Server's own Address<br/>
 <img src="https://i.imgur.com/biO9iAJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-- <b>Action:</b> Checked the DNS Settings of the INTERNAL NIC <br/>
-- <b>Verification:</b> The DNS Settings of the INTERNAL NIC are indeed to an EXTERNAL DNS Server (8.8.8.8) instead of the Server's own Address<br/>
-- <b>Correction:</b> Changed the DNS for the Server's INTERNAL NIC to the Server's IP Address, allowing it to resolve INTERNAL queries </br>
+- <b>ACTION:</b> Checked the DNS Settings of the INTERNAL NIC <br/>
+- <b>VERIFICATION:</b> The DNS Settings of the INTERNAL NIC are indeed to an EXTERNAL DNS Server (8.8.8.8) instead of the Server's own Address<br/>
+- <b>CORRECTION:</b> Changed the DNS for the Server's INTERNAL NIC to the Server's IP Address, allowing it to resolve INTERNAL queries </br>
 <img src="https://i.imgur.com/Kpf9jvn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/s4HeNB5.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/Xl5yWwu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br /> 
-- <b>Action:</b> Checked the Forwarders inside of the DNS Manager on the Server to see if queries outside of the network are using the Server's EXTERNAL NIC <br/>
-- <b>Finding:</b> The Forwarders are NOT using the Server's EXTERNAL NIC's IP Address (10.0.2.15). They are using a DNS that is not attached to the Network (8.8.8.8). This was causing delays when accessing external resources and web-browsing.<br/>
-- <b>Correction:</b> Updated the Forwarders to use the correct address. </br>
+- <b>ACTION:</b> Checked the Forwarders inside of the DNS Manager on the Server to see if queries outside of the network are using the Server's EXTERNAL NIC <br/>
+- <b>FINDING:</b> The Forwarders are NOT using the Server's EXTERNAL NIC's IP Address (10.0.2.15). They are using a DNS that is not attached to the Network (8.8.8.8). This was causing delays when accessing external resources and web-browsing.<br/>
+- <b>CORRECTION:</b> Updated the Forwarders to use the correct address. </br>
 <img src="https://i.imgur.com/KDD2L0a.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/LsBo2ej.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/KlVKWvJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br /> 
-- <b>Action:</b> Checked the DNS Settings on the Windows 10 Machine to see what they were set to <br/>
-- <b>Finding:</b> Windows 10 Machine's DNS was also pointing to an External DNS Server <br/>
-- <b>Correction:</b> Updated the DNS Settings on the Windows 10 Machine to match the Server's Internal DNS Settings <br/>
+- <b>ACTION:</b> Checked the DNS Settings on the Windows 10 Machine to see what they were set to <br/>
+- <b>FINDING:</b> Windows 10 Machine's DNS was also pointing to an External DNS Server <br/>
+- <b>CORRECTION:</b> Updated the DNS Settings on the Windows 10 Machine to match the Server's Internal DNS Settings <br/>
 <img src="https://i.imgur.com/f9vCS7a.png" height="80%" width="80%" alt="VM and Server 2016 Steps"/>
 <img src="https://i.imgur.com/LwyQQdM.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-- <b>Action:</b> Used the Ipconfig /flushdns command on both the Windows Server and Windows 10 Machine to ensure no remnants of past configurations remain cached. <br/>
+- <b>ACTION:</b> Used the Ipconfig /flushdns command on both the Windows Server and Windows 10 Machine to ensure no remnants of past configurations remain cached. <br/>
 <img src="https://i.imgur.com/W7mc5FQ.png" height="80%" width="80%" alt="VM and Server 2016 Steps"/>
 <img src="https://i.imgur.com/wqS8ozp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
