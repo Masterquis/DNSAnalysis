@@ -74,50 +74,19 @@ DNS resolution delays and network performance issues.
 <img src="https://i.imgur.com/M4fFlvX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-We're going to enable Hyper-V to help with the smoothness of operation:  <br/>
-<img src="https://i.imgur.com/fg4AGZE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<h2>Challenges and Solutions</h2>
+- <b>CHALLENGE:</b> Could not get the Windows 10 Machine to contact the Server via the Internal Network <br/>
+- <b>SOLUTION:</b> Updated the Server's and Windows 10 Machine's DNS Settings to use the correct addresses <br/>
 <br />
+- <b>CHALLENGE:</b> Windows 10 Machine was experiencing delays loading websites and resources outside of the Internal Network <br/>
+- <b>SOLUTION:</b> Updated the Server's Forwarders via DNS Manager to use the Server's EXTERNAL NIC. <br/>
 <br />
-Let's start the Windows 10 Installation:  <br/>
-<img src="https://i.imgur.com/Iop3wZU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Choose Windows 10 Pro for the installation since we'll be operating in a Professional Environment it gives us options and featurese that Windows 10 Home doesn't have.  <br/>
-<img src="https://i.imgur.com/4bsgzqO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Windows 10 has been installed and we're logged in.:  <br/>
-<img src="https://i.imgur.com/dwU28JJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-We need to change our DNS settings to point to our Domain Controller's IP so we can use it for DNS:  <br/>
-<img src="https://i.imgur.com/hsiVq8C.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Let's join this to our Active Directory Domain. First we navigate to Advanced System Settings:  <br/>
-<img src="https://i.imgur.com/jmlt9HO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Now we'll click change to get to Change our Computer name, but more importantly we'll be presented with the option to Join a Domain:  <br/>
-<img src="https://i.imgur.com/wpB3RtB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-We have to Authorize the Domain Addition by logging in with an account that is ALREADY a part of the DOMAIN (not the local machine). We're using the "Adminstrator" account here:  <br/>
-<img src="https://i.imgur.com/tL9jXVo.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-We've successfully joined the domain, Lets check our Domain Controller and see what shows up...:  <br/>
-<img src="https://i.imgur.com/hbTfEIq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-In our Domain Controller, we can see we have an IP Address Lease from COMP-001 (our newly joined Computer):  <br/>
-<img src="https://i.imgur.com/XtPcY32.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-We can also see we have a new addition in Active Directory Users and Computers with our newly joined Computer:  <br/>
-<img src="https://i.imgur.com/SRtdW08.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
+
+<h2>Conclusion and Key Learnings</h2>
+This lab demonstrates the importance of correct DNS configuration in maintaining optimal network performance. 
+Through this challenge, I learned to diagnose DNS issues, configure DNS settings, and improve network connectivity, which are essential skills for a Tier 2 Help Desk role.
+
 </p>
 
 <!--
