@@ -4,7 +4,7 @@
 
 <h2>Project Overview</h2>
 This case study demonstrates the troubleshooting process for resolving slow network performance caused by incorrect 
-DNS configuration on a Windows Server 2019 machine. Both the Windows Server 2019 and Windows 10 machines are experiencing 
+DNS configuration on Windows Server 2019 and Windows 10 machines. Both the Windows Server 2019 and Windows 10 machines are experiencing 
 DNS resolution delays and network performance issues.
 <br />
 
